@@ -1,0 +1,23 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - nvm install 13
+        - echo "Node Default Packages Test - $(node -v)"
+        - echo "Which Node - $(which node)"
+        - echo "Yarn Default Packages Test - $(yarn -v)"
+        - echo "Which Yarn - $(which yarn)"
+        - echo "Amplify Default Packages Test - $(amplify -v)"
+        - echo "Which Amplify - $(which amplify)"
+        - yarn install
+    build:
+      commands:
+        - yarn run build
+  artifacts:
+    baseDirectory: build
+    files:
+      - "**/*"
+  cache:
+    paths:
+      - node_modules/**/*
