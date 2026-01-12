@@ -3,7 +3,7 @@ frontend:
   phases:
     preBuild:
       commands:
-        - nvm install 16
+        - nvm install 20
         - echo "Node Default Packages Test - $(node -v)"
         - echo "Which Node - $(which node)"
         - echo "Yarn Default Packages Test - $(yarn -v)"
